@@ -30,8 +30,10 @@ export default class ItemCountPerPostContainer extends React.Component {
     createDate(weeks) {
         const countByYearMonth = weeks.map(week => {
             return {
-                title: week.post.title,
-                url: week.post.url,
+                post: {
+                    title: week.post.title,
+                    url: week.post.url,
+                },
                 beginDate: moment(week.beginDate).format("YYYY-MM-DD"),
                 endDate: moment(week.endDate).format("YYYY-MM-DD"),
                 itemCount: week.items.length
@@ -42,20 +44,23 @@ export default class ItemCountPerPostContainer extends React.Component {
 
     render() {
         const data = this.createDate(this.props.weeks);
-        console.log(data);
         const options = {
             sizePerPage: 20,
             sortName: this.state.sortName,
             sortOrder: this.state.sortOrder,
             onSortChange: this.onSortChange
         };
-        return <div className="ItemCountPerPostContainer panel panel-default">
+        const colFormatter = ({title, url}, row) => {
+            return (<a href={url} title={title}>
+                {title}
+            </a>);
+        };
+        return <div id="ItemCountPerPostContainer" className="ItemCountPerPostContainer panel panel-default">
             <h2 className="ItemCountPerPostContainer-title panel-heading">JSer.infoの記事 - 紹介したURL数</h2>
-            <p className="panel-body">JSer.infoに投稿されてる記事ごとに紹介しているURLのカス</p>
+            <p className="panel-body">JSer.infoに投稿されてる記事ごとに紹介しているURLの数</p>
             <BootstrapTable data={data} options={options} pagination exportCSV>
-                <TableHeaderColumn dataField="title">URL</TableHeaderColumn>
-                <TableHeaderColumn dataField="url" isKey={true}>URL</TableHeaderColumn>
-                <TableHeaderColumn dataField="beginDate" dataSort={true}>開始日</TableHeaderColumn>
+                <TableHeaderColumn width='600' dataFormat={colFormatter} dataField="post">記事</TableHeaderColumn>
+                <TableHeaderColumn dataField="beginDate" isKey={true} dataSort={true}>開始日</TableHeaderColumn>
                 <TableHeaderColumn dataField="endDate" dataSort={true}>終了日(投稿日)</TableHeaderColumn>
                 <TableHeaderColumn dataField="itemCount" dataSort={true}>紹介URL数</TableHeaderColumn>
             </BootstrapTable>,

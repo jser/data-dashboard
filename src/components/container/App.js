@@ -2,6 +2,7 @@
 "use strict";
 const React = require("react");
 const moment = require("moment");
+const Sticky = require('react-stickynode');
 import DatePickerInputRange from "../project/DatePickerInputRange";
 import DomainRankingContainer from "./DomainRankingContainer/DomainRankingContainer";
 import JSerPostingCountContainer from "./JSerPostingCountContainer/JSerPostingCountContainer";
@@ -33,19 +34,27 @@ export default class App extends React.Component {
 
     render() {
         return <div className="App">
-            <div className="App-inputDates panel panel-default">
-                <div className="panel-body">
-                    <span className="label label-default">日付:</span>
-                    <DatePickerInputRange
-                        beginDate={this.state.beginDate}
-                        endDate={this.state.endDate}
-                        onChange={this.onChangeDatePicker}
-                    />
+            <Sticky enabled={true} top={0} innerZ={1} bottomBoundary={".App-footer"}>
+                <div className="App-inputDates panel panel-default">
+                    <div className="panel-body">
+                        <span className="label label-default">日付:</span>
+                        <DatePickerInputRange
+                            beginDate={this.state.beginDate}
+                            endDate={this.state.endDate}
+                            onChange={this.onChangeDatePicker}
+                        />
+                    </div>
                 </div>
-            </div>
-            <ItemCountPerPostContainer weeks={this.state.weeks} />
-            <JSerPostingCountContainer weeks={this.state.weeks} />
+            </Sticky>
+            <ul className="nav nav-pills">
+                <li role="presentation"><a href="#ItemCountPerPostContainer">紹介URL</a></li>
+                <li role="presentation"><a href="#DomainRankingContainer">ドメイン</a></li>
+                <li role="presentation"><a href="#JSerPostingCountContainer">投稿記事数</a></li>
+            </ul>
+            <ItemCountPerPostContainer weeks={this.state.weeks}/>
             <DomainRankingContainer items={this.state.items}/>
+            <JSerPostingCountContainer weeks={this.state.weeks}/>
+            <div className="App-footer"></div>
         </div>;
     }
 }

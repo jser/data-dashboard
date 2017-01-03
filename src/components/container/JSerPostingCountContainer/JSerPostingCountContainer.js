@@ -48,7 +48,7 @@ export default class JSerPostingCountContainer extends React.Component {
             sortOrder: this.state.sortOrder,
             onSortChange: this.onSortChange
         };
-        return <div className="JSerPostingCountContainer panel panel-default">
+        return <div id="JSerPostingCountContainer" className="JSerPostingCountContainer panel panel-default">
             <h2 className="JSerPostingCountContainer-title panel-heading">JSer.infoの記事 - 年月毎の投稿数</h2>
             <p className="panel-body">JSer.infoに投稿されてる記事数を年月別で出したデータ</p>
             <BootstrapTable data={data} options={options} pagination exportCSV>

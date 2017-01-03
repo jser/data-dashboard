@@ -45,12 +45,13 @@ export default class DomainRankingContainer extends React.Component {
             sortOrder: this.state.sortOrder,
             onSortChange: this.onSortChange
         };
-        return <div className="DomainRankingContainer panel panel-default">
+        return <div id="DomainRankingContainer" className="DomainRankingContainer panel panel-default">
             <h2 className="DomainRankingContainer-title panel-heading">Domain Ranking</h2>
+            <p className="panel-body">紹介した記事のドメイン別ランキング</p>
             <BootstrapTable data={data} options={options} pagination exportCSV>
                 <TableHeaderColumn dataField="id"
                                    isKey={true}
-                                   dataSort={true}>ID</TableHeaderColumn>
+                                   hidden>ID</TableHeaderColumn>
                 <TableHeaderColumn dataField="name" dataSort={true}>Domain</TableHeaderColumn>
                 <TableHeaderColumn dataField="count" dataSort={true}>Count</TableHeaderColumn>
             </BootstrapTable>,
