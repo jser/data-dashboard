@@ -56,8 +56,8 @@ export default class ItemCountPerPostContainer extends React.Component {
             </a>);
         };
         return <div id="ItemCountPerPostContainer" className="ItemCountPerPostContainer panel panel-default">
-            <h2 className="ItemCountPerPostContainer-title panel-heading">JSer.infoの記事 - 紹介したURL数</h2>
-            <p className="panel-body">JSer.infoに投稿されてる記事ごとに紹介しているURLの数</p>
+            <h2 className="ItemCountPerPostContainer-title panel-heading">紹介したURL数</h2>
+            <p className="panel-body">JSer.infoに投稿記事ごとに紹介しているURL数</p>
             <BootstrapTable data={data} options={options} pagination exportCSV>
                 <TableHeaderColumn width='600' dataFormat={colFormatter} dataField="post">記事</TableHeaderColumn>
                 <TableHeaderColumn dataField="beginDate" isKey={true} dataSort={true}>開始日</TableHeaderColumn>

@@ -4,7 +4,10 @@ const React = require("react");
 const moment = require("moment");
 const Sticky = require('react-stickynode');
 import DatePickerInputRange from "../project/DatePickerInputRange";
+import TotalItemCountContainer from "./TotalItemCountContainer/TotalItemCountContainer";
+import TotalWeekCountContainer from "./TotalWeekCountContainer/TotalWeekCountContainer";
 import DomainRankingContainer from "./DomainRankingContainer/DomainRankingContainer";
+import TagRankingContainer from "./TagRankingContainer/TagRankingContainer";
 import JSerPostingCountContainer from "./JSerPostingCountContainer/JSerPostingCountContainer";
 import ItemCountPerPostContainer from "./ItemCountPerPostContainer/ItemCountPerPostContainer";
 export default class App extends React.Component {
@@ -46,12 +49,22 @@ export default class App extends React.Component {
                     </div>
                 </div>
             </Sticky>
+            <div className="panel panel-default">
+                <h2 className="panel-heading">Meta:</h2>
+                <p>この期間におけるデータです。</p>
+                <div className="panel-body">
+                    <TotalItemCountContainer items={this.state.items}/>
+                    <TotalWeekCountContainer weeks={this.state.weeks}/>
+                </div>
+            </div>
             <ul className="nav nav-pills">
                 <li role="presentation"><a href="#ItemCountPerPostContainer">紹介URL</a></li>
+                <li role="presentation"><a href="#TagRankingContainer">タグ</a></li>
                 <li role="presentation"><a href="#DomainRankingContainer">ドメイン</a></li>
                 <li role="presentation"><a href="#JSerPostingCountContainer">投稿記事数</a></li>
             </ul>
             <ItemCountPerPostContainer weeks={this.state.weeks}/>
+            <TagRankingContainer weeks={this.state.weeks}/>
             <DomainRankingContainer items={this.state.items}/>
             <JSerPostingCountContainer weeks={this.state.weeks}/>
             <div className="App-footer"></div>
