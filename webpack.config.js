@@ -16,10 +16,6 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.json$/,
-                loader: "json-loader"
-            },
-            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: "babel-loader",
@@ -28,9 +24,15 @@ module.exports = {
                 }
             },
             {
-                test: /node_modules/,
-                loader: 'ify-loader'
-            }
+                test: /\.css/,
+                loaders: ['style-loader', 'css-loader']
+            },
+            {test: /\.svg$/, loader: 'url-loader?mimetype=image/svg+xml'},
+            {test: /\.woff$/, loader: 'url-loader?mimetype=application/font-woff'},
+            {test: /\.woff2$/, loader: 'url-loader?mimetype=application/font-woff'},
+            {test: /\.eot$/, loader: 'url-loader?mimetype=application/font-woff'},
+            {test: /\.ttf$/, loader: 'url-loader?mimetype=application/font-woff'}
         ]
-    }
+    },
+    performance: {hints: false}
 };

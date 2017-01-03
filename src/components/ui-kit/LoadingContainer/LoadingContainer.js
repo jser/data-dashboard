@@ -30,7 +30,6 @@ export default ({Success, Failure}) => class LoadingContainer extends React.Comp
             />;
         } else {
             const props = omit(this.props, 'promise');
-            console.log(this.state.value);
             return <Success
                 {...props}
                 value={this.state.value}

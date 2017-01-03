@@ -38,7 +38,7 @@ export default function fetchStat() {
         return Promise.resolve(fetchStat._jSerStat);
     }
     return fetchData().then(function (results) {
-        const posts = results[0].reverse();
+        const posts = results[0];
         const items = results[1];
         const jSerStat = new JSerStat(items, posts);
         fetchStat._jSerStat = jSerStat;
