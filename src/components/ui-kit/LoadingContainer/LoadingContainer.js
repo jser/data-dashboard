@@ -21,7 +21,9 @@ export default ({Success, Failure}) => class LoadingContainer extends React.Comp
 
     render() {
         if (this.state.loading) {
-            return null;
+            return <div className="LoadingContainer">
+                {this.props.children}
+            </div>;
         } else if (this.state.error !== null) {
             const props = omit(this.props, 'promise');
             return <Failure

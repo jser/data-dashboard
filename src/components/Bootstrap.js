@@ -11,6 +11,8 @@ const Loading = LoadingContainer({
 export default class Bootstrap extends React.Component {
     render() {
         const promise = fetchJSerStat();
-        return <Loading promise={promise}/>
+        return <Loading promise={promise}>
+            Loading JSer.info data...
+        </Loading>
     }
 }
