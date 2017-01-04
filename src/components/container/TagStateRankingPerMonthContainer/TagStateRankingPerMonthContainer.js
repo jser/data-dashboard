@@ -92,8 +92,8 @@ export default class TagStateRankingPerMonthContainer extends React.Component {
         return <div id="TagStateRankingPerMonthContainer"
                     className="TagStateRankingPerMonthContainer panel panel-default">
             <h2 className="TagStateRankingPerMonthContainer-title panel-heading">Tag数遷移(合計)</h2>
-            <p className="panel-body">紹介したURLのタグ数の遷移</p>
-            <p className="panel-body">投稿した記事(月ごとに4つ取り出し)で紹介したURLにつけたタグの合計数を算出</p>
+            <p className="panel-body">紹介したアイテムにつけたタグ数の遷移</p>
+            <p className="panel-body">投稿した記事(月ごとに4つ取り出し)で紹介したアイテムにつけたタグの合計数を算出</p>
             <BootstrapTable data={data} options={options} pagination exportCSV>
                 <TableHeaderColumn dataField="id"
                                    isKey={true}

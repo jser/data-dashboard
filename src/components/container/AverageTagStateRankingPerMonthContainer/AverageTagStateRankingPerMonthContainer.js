@@ -107,8 +107,8 @@ export default class AverageTagStateRankingPerMonthContainer extends React.Compo
         return <div id="AverageTagStateRankingPerMonthContainer"
                     className="AverageTagStateRankingPerMonthContainer panel panel-default">
             <h2 className="AverageTagStateRankingPerMonthContainer-title panel-heading">Tag数遷移(平均)</h2>
-            <p className="panel-body">紹介したURLのタグ数の遷移</p>
-            <p className="panel-body">投稿した記事で紹介したURLにつけたタグの個数の平均を算出(タグ数 / 記事数)</p>
+            <p className="panel-body">紹介したアイテムにつけたタグ数の遷移</p>
+            <p className="panel-body">投稿した記事で紹介したアイテムにつけたタグの個数の平均を算出(タグ数 / 記事数)</p>
             <BootstrapTable data={data} options={options} pagination exportCSV>
                 <TableHeaderColumn dataField="id"
                                    isKey={true}

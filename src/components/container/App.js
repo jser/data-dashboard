@@ -14,6 +14,7 @@ import TagStateRankingPerMonthContainer from "./TagStateRankingPerMonthContainer
 import AverageTagStateRankingPerMonthContainer from "./AverageTagStateRankingPerMonthContainer/AverageTagStateRankingPerMonthContainer";
 import JSerPostingCountContainer from "./JSerPostingCountContainer/JSerPostingCountContainer";
 import ItemCountPerPostContainer from "./ItemCountPerPostContainer/ItemCountPerPostContainer";
+import ItemCountPerYearContainer from "./ItemCountPerYearContainer/ItemCountPerYearContainer";
 export default class App extends React.Component {
     constructor() {
         super();
@@ -44,6 +45,20 @@ export default class App extends React.Component {
             <header className="App-header">
                 <h1>JSer.info Data Dashboard</h1>
                 <p><a href="https://jser.info/">JSer.info</a>の統計データを集約したダッシュボード</p>
+                <div className="App-index panel panel-default">
+                    <h2 className="panel-heading">用語</h2>
+                    <div className="panel-body">
+                        <dl>
+                            <dt>アイテム</dt>
+                            <dd>紹介したサイト(URLや関連URLを含め)のことを1アイテムとしています。<a href="https://github.com/jser/stat-js">jser/stat-js</a>を参照</dd>
+
+                            <dt>記事/投稿記事</dt>
+                            <dd><a href="https://jser.info/">JSer.info</a>に投稿される1記事のこと。<a
+                                href="https://github.com/jser/stat-js">jser/stat-js</a>ではJSerWeekが該当する
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
             </header>
             <Sticky enabled={true} top={0} innerZ={1} bottomBoundary={".App-footer"}>
                 <div className="App-inputDates panel panel-default">
@@ -67,12 +82,13 @@ export default class App extends React.Component {
                 </div>
             </div>
             <ul className="nav nav-pills">
-                <li role="presentation"><a href="#ItemCountPerPostContainer">紹介URL</a></li>
+                <li role="presentation"><a href="#ItemCountPerPostContainer">紹介アイテム数</a></li>
                 <li role="presentation"><a href="#TagStateRankingPerMonthContainer">タグ(総数)</a></li>
                 <li role="presentation"><a href="#AverageTagStateRankingPerMonthContainer">タグ(平均)</a></li>
                 <li role="presentation"><a href="#DomainRankingContainer">ドメイン</a></li>
                 <li role="presentation"><a href="#JSerPostingCountContainer">投稿記事数</a></li>
             </ul>
+            <ItemCountPerYearContainer items={this.state.items}/>
             <ItemCountPerPostContainer weeks={this.state.weeks}/>
             <TagRankingContainer weeks={this.state.weeks}/>
             <TagStateRankingPerMonthContainer weeks={this.state.weeks}/>

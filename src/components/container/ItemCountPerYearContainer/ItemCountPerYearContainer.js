@@ -1,13 +1,13 @@
 // MIT © 2017 azu
 "use strict";
 const React = require("react");
-const url = require("url");
+const moment = require("moment");
 const countBy = require("lodash.countby");
 const sortBy = require("lodash.sortby");
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 require("bootstrap/dist/css/bootstrap.css");
 require("react-bootstrap-table/dist/react-bootstrap-table-all.min.css");
-export default class DomainRankingContainer extends React.Component {
+export default class ItemCountPerYearContainer extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -22,19 +22,22 @@ export default class DomainRankingContainer extends React.Component {
         }
     }
 
+    /**
+     *
+     * @param {JSerItem[]} items
+     * @returns {*}
+     */
     createDate(items) {
-        const hosts = items.map((item) => {
-            const urlObject = url.parse(item.url);
-            return urlObject.host;
+        const countByYearMonth = countBy(items, (item) => {
+            return moment(item.date).format("YYYY");
         });
-        const countByHosts = countBy(hosts);
-        return sortBy(Object.entries(countByHosts).map((entry, index) => {
+        return sortBy(Object.entries(countByYearMonth).map((entry, index) => {
             return {
                 id: String((index + 1)),
-                name: entry[0],
+                year: entry[0],
                 count: entry[1]
             };
-        }), "count").reverse()
+        }), "year")
     }
 
     render() {
@@ -45,19 +48,16 @@ export default class DomainRankingContainer extends React.Component {
             sortOrder: this.state.sortOrder,
             onSortChange: this.onSortChange
         };
-        return <div id="DomainRankingContainer" className="DomainRankingContainer panel panel-default">
-            <h2 className="DomainRankingContainer-title panel-heading">Domain Ranking</h2>
-            <p className="panel-body">紹介したアイテムのドメイン別ランキング</p>
+        return <div id="ItemCountPerYearContainer" className="ItemCountPerYearContainer panel panel-default">
+            <h2 className="ItemCountPerYearContainer-title panel-heading">年ごとのアイテム数</h2>
+            <p className="panel-body">年ごとに扱ったアイテムの数</p>
             <BootstrapTable data={data} options={options} pagination exportCSV>
-                <TableHeaderColumn dataField="id"
-                                   isKey={true}
-                                   hidden>ID</TableHeaderColumn>
-                <TableHeaderColumn dataField="name" filter={{ type: 'RegexFilter', delay: 500 }} dataSort={true}>Domain</TableHeaderColumn>
-                <TableHeaderColumn dataField="count" dataSort={true}>Count</TableHeaderColumn>
+                <TableHeaderColumn dataField="year" isKey={true} dataSort={true}>年</TableHeaderColumn>
+                <TableHeaderColumn dataField="count" dataSort={true}>紹介アイテム数</TableHeaderColumn>
             </BootstrapTable>,
         </div>
     }
 }
-DomainRankingContainer.propsType = {
-    items: React.PropTypes.arrayOf(React.PropTypes.object)
+ItemCountPerYearContainer.propsType = {
+    weeks: React.PropTypes.arrayOf(React.PropTypes.object)
 };

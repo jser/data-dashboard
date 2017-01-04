@@ -58,8 +58,8 @@ export default class ItemCountPerPostContainer extends React.Component {
             </a>);
         };
         return <div id="ItemCountPerPostContainer" className="ItemCountPerPostContainer panel panel-default">
-            <h2 className="ItemCountPerPostContainer-title panel-heading">紹介したURL数</h2>
-            <p className="panel-body">JSer.infoに投稿記事ごとに紹介しているURL数</p>
+            <h2 className="ItemCountPerPostContainer-title panel-heading">紹介したアイテム数</h2>
+            <p className="panel-body">JSer.infoに投稿記事ごとに紹介しているアイテム数</p>
             <BootstrapTable data={data} options={options} pagination exportCSV>
                 <TableHeaderColumn width='600' dataFormat={colFormatter} dataField="post"
                                    export={false}>記事</TableHeaderColumn>
@@ -67,7 +67,7 @@ export default class ItemCountPerPostContainer extends React.Component {
                 <TableHeaderColumn hidden export={true} dataField="url">URL</TableHeaderColumn>
                 <TableHeaderColumn dataField="beginDate" isKey={true} dataSort={true}>開始日</TableHeaderColumn>
                 <TableHeaderColumn dataField="endDate" dataSort={true}>終了日(投稿日)</TableHeaderColumn>
-                <TableHeaderColumn dataField="itemCount" dataSort={true}>紹介URL数</TableHeaderColumn>
+                <TableHeaderColumn dataField="itemCount" dataSort={true}>紹介アイテム数</TableHeaderColumn>
             </BootstrapTable>,
         </div>
     }
