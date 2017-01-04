@@ -52,7 +52,7 @@ export default class DomainRankingContainer extends React.Component {
                 <TableHeaderColumn dataField="id"
                                    isKey={true}
                                    hidden>ID</TableHeaderColumn>
-                <TableHeaderColumn dataField="name" dataSort={true}>Domain</TableHeaderColumn>
+                <TableHeaderColumn dataField="name" filter={{ type: 'RegexFilter', delay: 500 }} dataSort={true}>Domain</TableHeaderColumn>
                 <TableHeaderColumn dataField="count" dataSort={true}>Count</TableHeaderColumn>
             </BootstrapTable>,
         </div>
