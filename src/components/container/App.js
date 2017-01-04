@@ -42,7 +42,7 @@ export default class App extends React.Component {
     render() {
         return <div className="App">
             <header>
-                <h1>JSer.info data dashboard</h1>
+                <h1>JSer.info Data Dashboard</h1>
                 <p><a href="https://jser.info/">JSer.info</a>の統計データを集約したダッシュボード</p>
             </header>
             <Sticky enabled={true} top={0} innerZ={1} bottomBoundary={".App-footer"}>
