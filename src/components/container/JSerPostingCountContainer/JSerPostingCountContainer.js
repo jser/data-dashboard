@@ -54,7 +54,8 @@ export default class JSerPostingCountContainer extends React.Component {
             <BootstrapTable data={data} options={options} pagination exportCSV>
                 <TableHeaderColumn dataField="id"
                                    isKey={true}
-                                   dataSort={true}>ID</TableHeaderColumn>
+                                   dataSort={true}
+                                   hidden>ID</TableHeaderColumn>
                 <TableHeaderColumn dataField="date" dataSort={true}>YYYY-MM</TableHeaderColumn>
                 <TableHeaderColumn dataField="count" dataSort={true}>投稿数</TableHeaderColumn>
             </BootstrapTable>,

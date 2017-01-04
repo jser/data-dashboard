@@ -4,6 +4,8 @@ const React = require("react");
 const moment = require("moment");
 const Sticky = require('react-stickynode');
 import DatePickerInputRange from "../project/DatePickerInputRange";
+// container
+import LastWeekContainer from "./LastWeekContainer/LastWeekContainer";
 import TotalItemCountContainer from "./TotalItemCountContainer/TotalItemCountContainer";
 import TotalWeekCountContainer from "./TotalWeekCountContainer/TotalWeekCountContainer";
 import DomainRankingContainer from "./DomainRankingContainer/DomainRankingContainer";
@@ -57,6 +59,7 @@ export default class App extends React.Component {
                 <div className="panel-body">
                     <TotalItemCountContainer items={this.state.items}/>
                     <TotalWeekCountContainer weeks={this.state.weeks}/>
+                    <LastWeekContainer weeks={this.state.weeks} />
                 </div>
             </div>
             <ul className="nav nav-pills">
