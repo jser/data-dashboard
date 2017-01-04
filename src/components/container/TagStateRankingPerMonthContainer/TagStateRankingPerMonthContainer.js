@@ -3,8 +3,8 @@
 const React = require("react");
 const url = require("url");
 const moment = require("moment");
-const countBy = require("lodash.countBy");
-const sortBy = require("lodash.sortBy");
+const countBy = require("lodash.countby");
+const sortBy = require("lodash.sortby");
 const {compute} = require("jser-stat");
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 require("bootstrap/dist/css/bootstrap.css");

@@ -2,8 +2,8 @@
 "use strict";
 const React = require("react");
 const moment = require("moment");
-const countBy = require("lodash.countBy");
-const sortBy = require("lodash.sortBy");
+const countBy = require("lodash.countby");
+const sortBy = require("lodash.sortby");
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 require("bootstrap/dist/css/bootstrap.css");
 require("react-bootstrap-table/dist/react-bootstrap-table-all.min.css");

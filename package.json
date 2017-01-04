@@ -43,6 +43,7 @@
   },
   "homepage": "https://github.com/jser/dashboard",
   "devDependencies": {
+    "@alrra/travis-scripts": "^3.0.1",
     "autoprefixer": "^6.6.0",
     "babel-cli": "^6.18.0",
     "babel-loader": "^6.2.10",
