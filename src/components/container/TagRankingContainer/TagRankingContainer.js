@@ -43,8 +43,8 @@ export default class TagRankingContainer extends React.Component {
             onSortChange: this.onSortChange
         };
         return <div id="TagRankingContainer" className="TagRankingContainer panel panel-default">
-            <h2 className="TagRankingContainer-title panel-heading">Tag Ranking</h2>
-            <p className="panel-body">紹介した記事のタグ・ランキング</p>
+            <h2 className="TagRankingContainer-title panel-heading">Tagランキング(合計)</h2>
+            <p className="panel-body">紹介した記事のタグを合計数でランキング</p>
             <BootstrapTable data={data} options={options} pagination exportCSV>
                 <TableHeaderColumn dataField="id"
                                    isKey={true}

@@ -41,6 +41,10 @@ export default class App extends React.Component {
 
     render() {
         return <div className="App">
+            <header>
+                <h1>JSer.info data dashboard</h1>
+                <p><a href="https://jser.info/">JSer.info</a>の統計データを集約したダッシュボード</p>
+            </header>
             <Sticky enabled={true} top={0} innerZ={1} bottomBoundary={".App-footer"}>
                 <div className="App-inputDates panel panel-default">
                     <div className="panel-body">
@@ -54,12 +58,12 @@ export default class App extends React.Component {
                 </div>
             </Sticky>
             <div className="panel panel-default">
-                <h2 className="panel-heading">Meta:</h2>
+                <h2 className="panel-heading">Meta</h2>
                 <p>この期間におけるデータです。</p>
                 <div className="panel-body">
                     <TotalItemCountContainer items={this.state.items}/>
                     <TotalWeekCountContainer weeks={this.state.weeks}/>
-                    <LastWeekContainer weeks={this.state.weeks} />
+                    <LastWeekContainer weeks={this.state.weeks}/>
                 </div>
             </div>
             <ul className="nav nav-pills">
