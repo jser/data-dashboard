@@ -41,7 +41,7 @@ export default class ItemCountPerPostContainer extends React.Component {
                 itemCount: week.items.length
             };
         });
-        return sortBy(countByYearMonth, "beginDate");
+        return sortBy(countByYearMonth, "beginDate").reverse();
     }
 
     render() {
