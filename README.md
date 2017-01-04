@@ -1,11 +1,13 @@
 # JSer.info data dashboard [![Build Status](https://travis-ci.org/jser/data-dashboard.svg?branch=master)](https://travis-ci.org/jser/data-dashboard)
 
-JSer.info Data Dashboard
+JSer.info Data Dashboard.
+
+See [https://jser.info/data-dashboard/](https://jser.info/data-dashboard/ "JSer.info Data Dashboard")
 
 ## Development
 
-    npm install
-    npm start
+    yarn install
+    yarn start
 
 ## Changelog
 
