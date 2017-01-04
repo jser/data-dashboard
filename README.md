@@ -1,16 +1,11 @@
-# dashboard
+# JSer.info data dashboard [![Build Status](https://travis-ci.org/jser/data-dashboard.svg?branch=master)](https://travis-ci.org/jser/data-dashboard)
 
 JSer.info Data Dashboard
 
-## Install
+## Development
 
-Install with [npm](https://www.npmjs.com/):
-
-    npm install dashboard
-
-## Usage
-
-- [ ] Write usage instructions
+    npm install
+    npm start
 
 ## Changelog
 
