@@ -8,6 +8,8 @@ import TotalItemCountContainer from "./TotalItemCountContainer/TotalItemCountCon
 import TotalWeekCountContainer from "./TotalWeekCountContainer/TotalWeekCountContainer";
 import DomainRankingContainer from "./DomainRankingContainer/DomainRankingContainer";
 import TagRankingContainer from "./TagRankingContainer/TagRankingContainer";
+import TagStateRankingPerMonthContainer from "./TagStateRankingPerMonthContainer/TagStateRankingPerMonthContainer";
+import AverageTagStateRankingPerMonthContainer from "./AverageTagStateRankingPerMonthContainer/AverageTagStateRankingPerMonthContainer";
 import JSerPostingCountContainer from "./JSerPostingCountContainer/JSerPostingCountContainer";
 import ItemCountPerPostContainer from "./ItemCountPerPostContainer/ItemCountPerPostContainer";
 export default class App extends React.Component {
@@ -59,12 +61,15 @@ export default class App extends React.Component {
             </div>
             <ul className="nav nav-pills">
                 <li role="presentation"><a href="#ItemCountPerPostContainer">紹介URL</a></li>
-                <li role="presentation"><a href="#TagRankingContainer">タグ</a></li>
+                <li role="presentation"><a href="#TagStateRankingPerMonthContainer">タグ(総数)</a></li>
+                <li role="presentation"><a href="#AverageTagStateRankingPerMonthContainer">タグ(平均)</a></li>
                 <li role="presentation"><a href="#DomainRankingContainer">ドメイン</a></li>
                 <li role="presentation"><a href="#JSerPostingCountContainer">投稿記事数</a></li>
             </ul>
             <ItemCountPerPostContainer weeks={this.state.weeks}/>
             <TagRankingContainer weeks={this.state.weeks}/>
+            <TagStateRankingPerMonthContainer weeks={this.state.weeks}/>
+            <AverageTagStateRankingPerMonthContainer weeks={this.state.weeks}/>
             <DomainRankingContainer items={this.state.items}/>
             <JSerPostingCountContainer weeks={this.state.weeks}/>
             <div className="App-footer"></div>
