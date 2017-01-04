@@ -34,6 +34,8 @@ export default class ItemCountPerPostContainer extends React.Component {
                     title: week.post.title,
                     url: week.post.url,
                 },
+                title: week.post.title,
+                url: week.post.url,
                 beginDate: moment(week.beginDate).format("YYYY-MM-DD"),
                 endDate: moment(week.endDate).format("YYYY-MM-DD"),
                 itemCount: week.items.length
@@ -59,7 +61,10 @@ export default class ItemCountPerPostContainer extends React.Component {
             <h2 className="ItemCountPerPostContainer-title panel-heading">紹介したURL数</h2>
             <p className="panel-body">JSer.infoに投稿記事ごとに紹介しているURL数</p>
             <BootstrapTable data={data} options={options} pagination exportCSV>
-                <TableHeaderColumn width='600' dataFormat={colFormatter} dataField="post">記事</TableHeaderColumn>
+                <TableHeaderColumn width='600' dataFormat={colFormatter} dataField="post"
+                                   export={false}>記事</TableHeaderColumn>
+                <TableHeaderColumn hidden export={true} dataField="title">タイトル</TableHeaderColumn>
+                <TableHeaderColumn hidden export={true} dataField="url">URL</TableHeaderColumn>
                 <TableHeaderColumn dataField="beginDate" isKey={true} dataSort={true}>開始日</TableHeaderColumn>
                 <TableHeaderColumn dataField="endDate" dataSort={true}>終了日(投稿日)</TableHeaderColumn>
                 <TableHeaderColumn dataField="itemCount" dataSort={true}>紹介URL数</TableHeaderColumn>
