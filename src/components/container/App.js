@@ -9,6 +9,7 @@ import LastWeekContainer from "./LastWeekContainer/LastWeekContainer";
 import TotalItemCountContainer from "./TotalItemCountContainer/TotalItemCountContainer";
 import TotalWeekCountContainer from "./TotalWeekCountContainer/TotalWeekCountContainer";
 import DomainRankingContainer from "./DomainRankingContainer/DomainRankingContainer";
+import DomainStateContainer from "./DomainStateContainer/DomainStateContainer";
 import TagRankingContainer from "./TagRankingContainer/TagRankingContainer";
 import TagStateRankingPerMonthContainer from "./TagStateRankingPerMonthContainer/TagStateRankingPerMonthContainer";
 import AverageTagStateRankingPerMonthContainer from "./AverageTagStateRankingPerMonthContainer/AverageTagStateRankingPerMonthContainer";
@@ -94,6 +95,7 @@ export default class App extends React.Component {
             <TagStateRankingPerMonthContainer weeks={this.state.weeks}/>
             <AverageTagStateRankingPerMonthContainer weeks={this.state.weeks}/>
             <DomainRankingContainer items={this.state.items}/>
+            <DomainStateContainer items={this.state.items}/>
             <JSerPostingCountContainer weeks={this.state.weeks}/>
             <div className="App-footer"></div>
         </div>;
