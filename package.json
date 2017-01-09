@@ -86,6 +86,7 @@
     "react-date-picker": "^5.3.28",
     "react-datepicker": "^0.39.0",
     "react-dom": "^15.4.1",
+    "react-heat-calendar": "^1.0.3",
     "react-pivot": "^1.18.3",
     "react-stickynode": "^1.2.1"
   }

@@ -4072,15 +4072,11 @@ react-datepicker@^0.39.0:
     react-onclickoutside "^5.7.1"
     tether "^1.3.2"
 
-"react-dom@^0.14.0 || <15.4.0":
-  version "15.3.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.3.2.tgz#c46b0aa5380d7b838e7a59c4a7beff2ed315531f"
-
-react-dom@^0.14.7:
+"react-dom@^0.14.0 || <15.4.0", react-dom@^0.14.7:
   version "0.14.8"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-0.14.8.tgz#0f1c547514263f771bd31814a739e5306575069e"
 
-react-dom@^15.4.1:
+react-dom@^15.0.0, react-dom@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.4.1.tgz#d54c913261aaedb17adc20410d029dcc18a1344a"
   dependencies:
@@ -4100,6 +4096,16 @@ react-flex@2.2.7:
   dependencies:
     object-assign "^4.0.1"
     react-class "^2.0.0"
+
+react-heat-calendar@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-heat-calendar/-/react-heat-calendar-1.0.3.tgz#535b87068b1de8c6ed5d4b902fd916515d1583bd"
+  dependencies:
+    lodash.countby "^4.6.0"
+    lodash.sortby "^4.7.0"
+    moment "^2.17.1"
+    react "^15.4.2"
+    react-dom "^15.0.0"
 
 react-inline-block@2.0.0:
   version "2.0.0"
@@ -4163,6 +4169,14 @@ react@>=0.12.2, react@^15.4.1:
 "react@^0.14.0 || <15.4.0":
   version "15.3.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.3.2.tgz#a7bccd2fee8af126b0317e222c28d1d54528d09e"
+  dependencies:
+    fbjs "^0.8.4"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.0"
+
+react@^15.4.2:
+  version "15.4.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-15.4.2.tgz#41f7991b26185392ba9bae96c8889e7e018397ef"
   dependencies:
     fbjs "^0.8.4"
     loose-envify "^1.1.0"
