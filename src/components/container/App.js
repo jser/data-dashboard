@@ -8,6 +8,7 @@ import DatePickerInputRange from "../project/DatePickerInputRange";
 import LastWeekContainer from "./LastWeekContainer/LastWeekContainer";
 import TotalItemCountContainer from "./TotalItemCountContainer/TotalItemCountContainer";
 import TotalWeekCountContainer from "./TotalWeekCountContainer/TotalWeekCountContainer";
+import HeatCalendarContainer from "./HeatCalendarContainer/HeatCalendarContainer";
 import DomainRankingContainer from "./DomainRankingContainer/DomainRankingContainer";
 import DomainStateContainer from "./DomainStateContainer/DomainStateContainer";
 import TagRankingContainer from "./TagRankingContainer/TagRankingContainer";
@@ -80,6 +81,7 @@ export default class App extends React.Component {
                     <TotalItemCountContainer items={this.state.items}/>
                     <TotalWeekCountContainer weeks={this.state.weeks}/>
                     <LastWeekContainer weeks={this.state.weeks}/>
+                    <HeatCalendarContainer {...this.state}/>
                 </div>
             </div>
             <ul className="nav nav-pills">
