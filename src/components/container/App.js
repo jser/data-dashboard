@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import * as React from "react";
 import DatePickerInputRange from "../project/DatePickerInputRange";
+import JSerPostingCountPerYearContainer from "./JSerPostingCountPerYearContainer/JSerPostingCountPerYearContainer.js";
 // container
 import LastWeekContainer from "./LastWeekContainer/LastWeekContainer";
 import TotalItemCountContainer from "./TotalItemCountContainer/TotalItemCountContainer";
@@ -118,6 +119,7 @@ export default class App extends React.Component {
                     </li>
                 </ul>
                 <ItemCountPerYearContainer items={this.state.items} />
+                <JSerPostingCountPerYearContainer weeks={this.state.weeks} />
                 <ItemCountPerPostContainer weeks={this.state.weeks} />
                 <TagRankingContainer weeks={this.state.weeks} />
                 <TagStateRankingPerMonthContainer weeks={this.state.weeks} />
