@@ -1,10 +1,11 @@
 // MIT © 2017 azu
-"use strict";
-const React = require("react");
+import PropTypes from "prop-types";
+
+import * as React from "react";
+import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
+
 const moment = require("moment");
-const countBy = require("lodash.countby");
 const sortBy = require("lodash.sortby");
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 require("bootstrap/dist/css/bootstrap.css");
 require("react-bootstrap-table/dist/react-bootstrap-table-all.min.css");
 export default class ItemCountPerPostContainer extends React.Component {
@@ -19,7 +20,7 @@ export default class ItemCountPerPostContainer extends React.Component {
                 sortName,
                 sortOrder
             });
-        }
+        };
     }
 
     /**
@@ -32,7 +33,7 @@ export default class ItemCountPerPostContainer extends React.Component {
             return {
                 post: {
                     title: week.post.title,
-                    url: week.post.url,
+                    url: week.post.url
                 },
                 title: week.post.title,
                 url: week.post.url,
@@ -52,26 +53,42 @@ export default class ItemCountPerPostContainer extends React.Component {
             sortOrder: this.state.sortOrder,
             onSortChange: this.onSortChange
         };
-        const colFormatter = ({title, url}, row) => {
-            return (<a href={url} title={title}>
-                {title}
-            </a>);
+        const colFormatter = ({ title, url }, row) => {
+            return (
+                <a href={url} title={title}>
+                    {title}
+                </a>
+            );
         };
-        return <div id="ItemCountPerPostContainer" className="ItemCountPerPostContainer panel panel-default">
-            <h2 className="ItemCountPerPostContainer-title panel-heading">紹介したアイテム数</h2>
-            <p className="panel-body">JSer.infoに投稿記事ごとに紹介しているアイテム数</p>
-            <BootstrapTable data={data} options={options} pagination exportCSV>
-                <TableHeaderColumn width='600' dataFormat={colFormatter} dataField="post"
-                                   export={false}>記事</TableHeaderColumn>
-                <TableHeaderColumn hidden export={true} dataField="title">タイトル</TableHeaderColumn>
-                <TableHeaderColumn hidden export={true} dataField="url">URL</TableHeaderColumn>
-                <TableHeaderColumn dataField="beginDate" isKey={true} dataSort={true}>開始日</TableHeaderColumn>
-                <TableHeaderColumn dataField="endDate" dataSort={true}>終了日(投稿日)</TableHeaderColumn>
-                <TableHeaderColumn dataField="itemCount" dataSort={true}>紹介アイテム数</TableHeaderColumn>
-            </BootstrapTable>,
-        </div>
+        return (
+            <div id="ItemCountPerPostContainer" className="ItemCountPerPostContainer panel panel-default">
+                <h2 className="ItemCountPerPostContainer-title panel-heading">紹介したアイテム数</h2>
+                <p className="panel-body">JSer.infoに投稿記事ごとに紹介しているアイテム数</p>
+                <BootstrapTable data={data} options={options} pagination exportCSV>
+                    <TableHeaderColumn width="600" dataFormat={colFormatter} dataField="post" export={false}>
+                        記事
+                    </TableHeaderColumn>
+                    <TableHeaderColumn hidden export={true} dataField="title">
+                        タイトル
+                    </TableHeaderColumn>
+                    <TableHeaderColumn hidden export={true} dataField="url">
+                        URL
+                    </TableHeaderColumn>
+                    <TableHeaderColumn dataField="beginDate" isKey={true} dataSort={true}>
+                        開始日
+                    </TableHeaderColumn>
+                    <TableHeaderColumn dataField="endDate" dataSort={true}>
+                        終了日(投稿日)
+                    </TableHeaderColumn>
+                    <TableHeaderColumn dataField="itemCount" dataSort={true}>
+                        紹介アイテム数
+                    </TableHeaderColumn>
+                </BootstrapTable>
+                ,
+            </div>
+        );
     }
 }
 ItemCountPerPostContainer.propsType = {
-    weeks: React.PropTypes.arrayOf(React.PropTypes.object)
+    weeks: PropTypes.arrayOf(PropTypes.object)
 };

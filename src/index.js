@@ -1,7 +1,12 @@
 // MIT © 2016 azu
-"use strict";
-require("babel-polyfill");
-const React = require("react");
-const ReactDOM = require("react-dom");
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 import Bootstrap from "./components/Bootstrap.js";
-ReactDOM.render(<Bootstrap />, document.getElementById("js-app"));
+
+function requireAll(r) {
+    r.keys().forEach(r);
+}
+
+require("babel-polyfill");
+requireAll(require.context("./", true, /\.css$/));
+ReactDOM.render(<Bootstrap />, document.getElementById("root"));
