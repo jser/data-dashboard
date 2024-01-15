@@ -6,7 +6,7 @@ import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 
 const moment = require("moment");
 const sortBy = require("lodash.sortby");
-const { compute } = require("jser-stat");
+const { compute } = require("@jser/stat");
 require("bootstrap/dist/css/bootstrap.css");
 require("react-bootstrap-table/dist/react-bootstrap-table-all.min.css");
 export default class AverageTagStateRankingPerMonthContainer extends React.Component {

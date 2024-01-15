@@ -53,9 +53,9 @@
     "rimraf": "^2.5.4"
   },
   "dependencies": {
+    "@jser/stat": "^2.0.0",
     "babel-polyfill": "^6.20.0",
     "bootstrap": "3",
-    "jser-stat": "^2.1.1",
     "lodash.countby": "^4.6.0",
     "lodash.groupby": "^4.6.0",
     "lodash.omit": "^4.5.0",
